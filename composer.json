@@ -1,0 +1,11 @@
+{
+    "name" : "tests",
+	"license" : "MIT",
+	"type" : "project",
+	"description" : "Tests",
+	"autoload" : {
+		"psr-0" : {
+		"" : "src/"
+		}
+	}
+}

@@ -11,7 +11,7 @@ class AddressManager
     function outputAddresses($resolve)
     {
         foreach ($this->addresses as $address) {
-            //print $address;
+            print $address;
             if (is_bool($resolve)) {
                 print " (" . gethostbyaddr($address) . ")";
             }

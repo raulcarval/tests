@@ -1,7 +1,11 @@
 <?php
 
-class ShopProduct
+class ShopProduct implements Chargeable
 {
+
+    const AVAILABLE = 0;
+
+    const OUT_OF_STOCK = 1;
 
     private $title;
 

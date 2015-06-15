@@ -1,7 +1,8 @@
 <?php
 
-class ShopProduct implements Chargeable
+class ShopProduct implements Chargeable, IdentityObject
 {
+    use PriceUtilities, IdentityTrait;
 
     const AVAILABLE = 0;
 
@@ -65,5 +66,10 @@ class ShopProduct implements Chargeable
         $base = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
         return $base;
+    }
+
+    function storeIdentityObject(IdentityObject $idobj)
+    {
+        // do something with the IdentityObject
     }
 }

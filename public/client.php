@@ -1,10 +1,20 @@
 <?php
+use tasks;
 ini_set('display_errors', 1);
 require '../vendor/autoload.php';
 
-$processor = new ProcessSale();
-$processor->registerCallback( array( new Mailer(), "doMail" ) );
- 
-$processor->sale( new Product( "shoes", 6 ) );
-print "\n";
-$processor->sale( new Product( "coffee", 6 ) );
+$classname = "Task";
+
+$path = "../src/tasks/{$classname}.php";
+if ( ! file_exists( $path ) ) {
+    throw new Exception( "No such file as {$path}" );
+}
+
+require_once( $path );
+$qclassname = "tasks\\$classname";
+if ( ! class_exists( $qclassname ) ) {
+    throw new Exception( "No such class as $qclassname" );
+}
+
+$myObj = new $qclassname();
+$myObj->doSpeak();

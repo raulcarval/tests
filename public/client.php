@@ -1,20 +1,11 @@
 <?php
-use tasks;
 ini_set('display_errors', 1);
 require '../vendor/autoload.php';
 
-$classname = "Task";
-
-$path = "../src/tasks/{$classname}.php";
-if ( ! file_exists( $path ) ) {
-    throw new Exception( "No such file as {$path}" );
+$store = new UserStore();
+$store->addUser("bob williams", "bob@example.com", "12345");
+$validator = new Validator($store);
+if ($validator->validateUser("bob@example.com", "12345")) {
+    print "pass, friend!\n";
 }
-
-require_once( $path );
-$qclassname = "tasks\\$classname";
-if ( ! class_exists( $qclassname ) ) {
-    throw new Exception( "No such class as $qclassname" );
-}
-
-$myObj = new $qclassname();
-$myObj->doSpeak();
+    

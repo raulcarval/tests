@@ -30,4 +30,16 @@ class UserStoreTest extends \PHPUnit_Framework_TestCase
             $this->fail("Short password exception expected");
         } catch (Exception $e) {}
     }
+
+    public function testAddUser_duplicate()
+    {
+        try {
+            $ret = $this->store->addUser("bob williams", "a@b.com", "123456");
+            $ret = $this->store->addUser("bob stevens", "a@b.com", "123456");
+            self::fail("Exception should have been thrown");
+        } catch (Exception $e) {
+            $const = $this->logicalAnd($this->logicalNot($this->contains("bob stevens")), $this->isType('array'));
+            self::AssertThat($this->store->getUser("a@b.com"), $const);
+        }
+    }
 }

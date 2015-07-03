@@ -22,23 +22,23 @@ class ValidatorTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($this->validator->validateUser("bob@example.com", "12345"), "Expecting successful validation");
     }
 
-    public function testValidate_FalsePass()
-    {
-        $store = $this->getMock("UserStore");
+//     public function testValidate_FalsePass()
+//     {
+//         $store = $this->getMock("UserStore");
         
-        $this->validator = new Validator($store);
+//         $this->validator = new Validator($store);
         
-        $store->expects($this->once())
-            ->method('notifyPasswordFailure')
-            ->with($this->equalTo('bob@example.com'));
+//         $store->expects($this->once())
+//             ->method('notifyPasswordFailure')
+//             ->with($this->equalTo('bob@example.com'));
         
-        $store->expects($this->any())
-            ->method("getUser")
-            ->will($this->returnValue(array(
-            "name" => "bob@example.com",
-            "pass" => "right"
-        )));
+//         $store->expects($this->any())
+//             ->method("getUser")
+//             ->will($this->returnValue(array(
+//             "name" => "bob@example.com",
+//             "pass" => "right"
+//         )));
         
-        $this->validator->validateUser("bob@example.com", "wrong");
-    }
+//         $this->validator->validateUser("bob@example.com", "wrong");
+//     }
 }

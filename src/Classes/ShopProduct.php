@@ -1,4 +1,5 @@
 <?php
+namespace Classes;
 
 class ShopProduct implements Chargeable, IdentityObject
 {
@@ -71,5 +72,14 @@ class ShopProduct implements Chargeable, IdentityObject
     function storeIdentityObject(IdentityObject $idobj)
     {
         // do something with the IdentityObject
+    }
+
+    public function generateId()
+    {
+        // TODO: Auto-generated method stub
+    }
+    
+    function getTaxRate() {
+        
     }
 }

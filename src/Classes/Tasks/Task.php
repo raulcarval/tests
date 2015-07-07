@@ -1,5 +1,5 @@
 <?php
-namespace tasks;
+namespace Classes\Tasks;
 
 class Task
 {

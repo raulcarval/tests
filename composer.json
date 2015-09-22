@@ -1,11 +1,11 @@
 {
-    "name" : "tests",
+	"name" : "raulcarval/tests",
 	"license" : "MIT",
 	"type" : "project",
-	"description" : "Tests",
+	"description" : "General Tests",
 	"autoload" : {
 		"psr-0" : {
-		"" : "src/"
+			"" : "src/"
 		}
 	}
 }

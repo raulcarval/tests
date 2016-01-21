@@ -4,8 +4,10 @@
 	"type" : "project",
 	"description" : "General Tests",
 	"autoload" : {
-		"psr-0" : {
-			"" : "src/"
-		}
-	}
+		"psr-0" : { "" : "src/" }
+	},
+	"require": {
+    	"asimlqt/php-google-spreadsheet-client": "2.3.*",
+		"google/apiclient": "1.0.*@beta"
+    }
 }

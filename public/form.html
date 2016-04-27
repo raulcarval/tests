@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://system.na1.netsuite.com/core/media/media.nl?id=391715&c=3919887&h=975414eba249a7c5241a&_xt=.css">
+    </head>
+    <body>
+    	<div class="box">
+		<span style="font-size:18px; font-weight: 600; color: #444">Login</span>
+         <form class="form" method="post" action="https://system.netsuite.com/app/login/nllogin.nl">
+             <fieldset>
+                 <legend class="sr-only">Formulário de Login</legend>
+                 <span class="fields-required"><span class="required">*</span>Campos obrigatórios</span>
+                 <label class="label-form sixcol" for="e-mail">
+                     <span class="field"><span class="required">*</span>Usuário</span>
+                     <input class="input" type="text" name="email" id="e-mail" class=username aria-required="true" placeholder="Digite seu e-mail" autofocus="" type="text" value="">
+                 </label>
+                 <label class="label-form sixcol last" for="password">
+                     <span class="field"><span class="required">*</span>Senha</span>
+                     <input class="input" type="password" name="password" id="password" class="password" aria-required="true" placeholder="Digite sua senha" type="password">
+                 </label>
+                 <input type="hidden" name="_csrf_token" value="9b503d000a6365bd09e90858982f900d581cc703">
+                 <input class="btn" value="Enviar" type="submit" onClick="document.forms[0].jsenabled.value = 'T'; setLoginCookie(rememberme.checked);">
+                 <span style="float: right"><a href="https://system.netsuite.com/pages/pwdreset.jsp" target="_blank">Esqueceu sua senha?</a></span>
+             </fieldset>
+         </form>
+        </div>
+    
+    </body>
+</html>

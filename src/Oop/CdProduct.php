@@ -1,25 +1,23 @@
 <?php
+
 namespace Classes;
-class CdProduct extends ShopProduct
-{
 
-    private $playLength = 0;
+class CdProduct extends ShopProduct {
 
-    public function __construct($title, $firstName, $mainName, $price, $playLength)
-    {
-        parent::__construct($title, $firstName, $mainName, $price);
-        $this->playLength = $playLength;
-    }
+	private $playLength = 0;
 
-    public function getPlayLength()
-    {
-        return $this->playLength;
-    }
+	public function __construct($title, $firstName, $mainName, $price, $playLength) {
+		parent::__construct($title, $firstName, $mainName, $price);
+		$this->playLength = $playLength;
+	}
 
-    public function getSummaryLine()
-    {
-        $base = parent::getSummaryLine();
-        $base .= ": playing time - {$this->playLength}";
-        return $base;
-    }
+	public function getPlayLength() {
+		return $this->playLength;
+	}
+
+	public function getSummaryLine() {
+		$base = parent::getSummaryLine();
+		$base .= ": playing time - {$this->playLength}";
+		return $base;
+	}
 }
